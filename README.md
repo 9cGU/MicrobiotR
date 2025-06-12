@@ -2,7 +2,7 @@
 
 ## Overview
 
-MicroBiotR is a comprehensive R pipeline developed for Analysis between Microbiota And host phenotype such as HC vs IBD. The package delivers a robust framework for examining microbiota flowcytometry, aiming to pinpoint difference of bacterial community composition potentially linked to environmental factors and host phenotypes.
+MicroBiotR is a comprehensive R pipeline developed for analysis between microbiota And host phenotype such as HC vs disease. The package delivers a robust framework for examining microbiota flowcytometry, aiming to pinpoint difference of bacterial community composition potentially linked to environmental factors and host phenotypes.
 
 ## Key Features
 
