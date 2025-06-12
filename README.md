@@ -12,3 +12,12 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 * **MBR_circle**: Utilizing advanced models like LASSO logistic regression for predictive analysis.
 * **MBR_ml**: Providing tools for cross-validation, parameter selection, ROC analysis, and diagnostic model plots to evaluate and interpret the generated models.
 * **MBR_conf**: A toolkit for extracting relevant biomarkers from your microbiome data.
+
+## Installation
+
+You can install the released version of `MicroBiotR` from [GitHub](https://github.com/9cGU/MicroBiotR) with the following R commands:
+
+```R
+# install.packages("devtools")
+devtools::install_github("9cGU/MicroBiotR", force = TRUE)
+packageVersion("MicroBiotR")
