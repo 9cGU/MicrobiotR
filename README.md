@@ -10,8 +10,16 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 * **MBR_som**: SOM calculation and to obtain count-table.
 * **MBR_stat**: Identifying significant clusters.
 * **MBR_circle**: Utilizing advanced models like LASSO logistic regression for predictive analysis.
-* **MBR_ml**: Providing tools for cross-validation, parameter selection, ROC analysis, and diagnostic model plots to evaluate and interpret the generated models.
+* **MBR_violin**: Providing tools for cross-validation, parameter selection, ROC analysis, and diagnostic model plots to evaluate and interpret the generated models.
+* **MBR_fs**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_heatmap**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_mantel**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_ml**: A toolkit for extracting relevant biomarkers from your microbiome data.
 * **MBR_conf**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_reclustering**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_process**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_prepare**: A toolkit for extracting relevant biomarkers from your microbiome data.
+* **MBR_plot**: A toolkit for extracting relevant biomarkers from your microbiome data.
 
 ## Installation
 
