@@ -7,8 +7,8 @@ MicroBiotR is a comprehensive R pipeline developed for analysis between microbio
 ## Key Features
 
 MicrobiotR provide an All-in-One framework that supports a wide array of microbiota flow cytometry clustering and analysis, including:
-* **MBR_som**: Preparing your raw microbiome data for analysis.
-* **MBR_stat**: Identifying significant associations between microbial communities and host phenotypes.
+* **MBR_som**: SOM calculation and to obtain count-table.
+* **MBR_stat**: Identifying significant clusters.
 * **MBR_circle**: Utilizing advanced models like LASSO logistic regression for predictive analysis.
 * **MBR_ml**: Providing tools for cross-validation, parameter selection, ROC analysis, and diagnostic model plots to evaluate and interpret the generated models.
 * **MBR_conf**: A toolkit for extracting relevant biomarkers from your microbiome data.
