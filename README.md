@@ -31,3 +31,12 @@ You can install the released version of `MicroBiotR` from [GitHub](https://githu
 # install.packages("devtools")
 devtools::install_github("9cGU/MicroBiotR", force = TRUE)
 packageVersion("MicroBiotR")
+
+## SOM analysis
+
+You can install the released version of `MicroBiotR` from [GitHub](https://github.com/9cGU/MicroBiotR) with the following R commands:
+
+```R
+# install.packages("devtools")
+devtools::install_github("9cGU/MicroBiotR", force = TRUE)
+packageVersion("MicroBiotR")
