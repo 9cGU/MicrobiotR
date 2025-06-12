@@ -2,7 +2,7 @@
 
 ## Overview
 
-SIAMCAT is a comprehensive pipeline designed for **Statistical Inference of Associations between Microbial Communities And host phenoTypes**. It provides a robust framework for analyzing microbiome data to determine changes in community composition that are associated with environmental factors and host phenotypes. [cite_start]This tool is crucial for linking human microbiome composition to host phenotypes, such as diseases, which is an area of intense research.
+MicroBiotR is a comprehensive R pipeline developed for Analysis between Microbiota And host phenotype such as HC vs IBD. The package delivers a robust framework for examining microbiota flowcytometry, aiming to pinpoint difference of bacterial community composition potentially linked to environmental factors and host phenotypes.
 
 ## Key Features
 
