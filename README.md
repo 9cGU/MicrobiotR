@@ -50,4 +50,11 @@ MBR_stat(data = count_table, group_col = 'Group', meta_data = meta,
        correction = 'none', cutoff = 0.008)
 ```
 
+## Analysis
+```markdown
+MBR_circle(data = significant_data, group_col = 'Group', meta_data = meta, width = 8, 
+         height = 8, out_path = '')
+```
+
+
 
