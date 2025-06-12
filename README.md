@@ -27,16 +27,19 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 
 You can install the released version of `MicroBiotR` from [GitHub](https://github.com/9cGU/MicroBiotR) with the following R commands:
 
+```markdown
 ```R
 # install.packages("devtools")
 devtools::install_github("9cGU/MicroBiotR", force = TRUE)
 packageVersion("MicroBiotR")
+```
 
 ## SOM analysis
-
-You can install the released version of `MicroBiotR` from [GitHub](https://github.com/9cGU/MicroBiotR) with the following R commands:
-
+```markdown
 ```R
-# install.packages("devtools")
-devtools::install_github("9cGU/MicroBiotR", force = TRUE)
-packageVersion("MicroBiotR")
+# load matadata
+meta<-read.delim('meta.txt',header = T, row.names = 1)
+# som analysis
+MBR_som(fl_data_ig)
+```
+
