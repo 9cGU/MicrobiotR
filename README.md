@@ -79,5 +79,94 @@ MBR_mantel(
 
 ```
 
+## Machine learning
+```markdown
+MBR_ml(
+  data = MBR_selected_features,        # your feature table (samples as rows, taxa as columns)
+  meta_data = meta,          # metadata dataframe (samples in same order as `data`)
+  group_name = 'Group',             # column name in metadata containing group labels
+  out_path = './',          # directory to save output PDF and group file
+  reference_level = 'IBD',            # reference group (e.g., "A" or "Control")
+  width = 6,                        # width of the output plot PDF
+  height = 6,                       # height of the output plot PDF
+  method = 'repeatedcv',           # resampling method (e.g., repeated cross-validation)
+  number = 2,                       # number of folds
+  repeats = 2                       # number of repeats
+)
+
+MBR_conf(
+  data = MBR_selected_features,
+  meta_data = meta,
+  group_name = 'Group',
+  reference_level = 'IBD',
+  out_path = './'
+)
+```
+
+## Reclustering
+```markdown
+MBR_reclustering(data = cohonen_information, num_clusters = 1000)
+```
+
+## flowcytometry dotplot
+```markdown
+rawdata_path <- "/MappedFCS"
+
+fcs_files <- MBR_read(rawdata_path)
+
+selected_rows <- c('V1269','V1544','V1020','V1252','V1118','V1117', 'V1295')
+
+
+column_mapping <- c(
+  "FSC PAR"        = "FSC.PAR",
+  "SSC"            = "SSC",
+  "Hoechst.Red.DNA"= "Hoechst.Red",   
+  "Hoechst.Red"    = "Hoechst.Red",
+  "Hoechst Red.DNA"    = "Hoechst.Red",
+  "FITC.hIgA2"     = "FITC",
+  "FITC"           = "FITC",
+  "APC.hIgA1"      = "APC",
+  "APC"            = "APC",
+  "Pe-TR.hIgG"     = "Pe.TR",
+  "Pe.TR.hIgG"     = "Pe.TR",
+  "Pe.TR"          = "Pe.TR",
+  "BV650.hIgM"     = "BV650",
+  "BV650"          = "BV650"
+)
+
+
+
+plot_params <- list(
+  list(x = "FSC.PAR", y = "SSC"),
+  list(x = "FSC.PAR", y = "Hoechst.Red"),
+  list(x = "FITC", y = "APC"),
+  list(x = "Pe.TR", y = "BV650")
+)
+
+dat <- MBR_process(
+  fcs_files,
+  file_index = 1,
+  transformation = function(x) 10^((4 * x) / 65000),
+  column_mapping = column_mapping
+)
+
+bins <- MBR_prepare(
+  cohonen_information,
+  selected_rows = selected_rows,
+  transformation = function(x) 10^((4 * x) / 65000),
+  column_mapping = column_mapping
+)
+
+
+plots <- MBR_plot(
+  dat = dat,
+  bins = bins,
+  plot_params = plot_params,
+  selected_rows = selected_rows
+)
+
+print(plots)
+```
+
 
 
