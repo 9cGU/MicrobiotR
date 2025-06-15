@@ -46,14 +46,37 @@ MBR_som(fl_data_ig)
 # test type should be one of 'wilcoxon', 'kruskal', 'anova'
 # correction could be none or fdr
 MBR_stat(data = count_table, group_col = 'Group', meta_data = meta, 
-       test_type = 'wilcoxon', out_path = '/Users/apple/Desktop/DRFZ/Rpackage/lastcall', 
+       test_type = 'wilcoxon', out_path = './', 
        correction = 'none', cutoff = 0.008)
 ```
 
 ## Analysis
 ```markdown
 MBR_circle(data = significant_data, group_col = 'Group', meta_data = meta, width = 8, 
-         height = 8, out_path = '')
+         height = 8, out_path = './')
+
+MBR_violin(data = significant_data, meta_data = meta, pvalue_data = pvalue_data, 
+         cluster = 709, group_col = 'Group', colors = c('#FF7F00', '#4DAF4A'), out_path = './')
+
+MBR_beta(original, out_path = './', test = 't.test', 
+       meta_data = meta, group_name = 'Group')
+
+MBR_heatmap(data = MBR_selected_features[,1:6], 
+          cohonen_information = cohonen_information, 
+          out_path = './', scale = 'row', cluster_cols = F, 
+          cluster_rows = T, display_numbers = F)
+
+MBR_mantel(
+  data = MBR_selected_features,
+  meta_data = meta,
+  clinical_cols = c("Clinical1", "Clinical2"),
+  demographic_cols = c("Demographic1", "Demographic2"),
+  spec_select_names = list(A = "Clinical", B = "Demographic"),
+  out_path = './',  
+  width = 6,
+  height = 6
+)
+
 ```
 
 
