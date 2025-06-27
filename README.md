@@ -59,8 +59,8 @@ MBR_som(fl_data_ig)
 
 ## Statistics
 ```markdown
-# test type should be one of 'wilcoxon', 'kruskal', 'anova'
-# correction could be none or fdr
+# test type should be one of 'wilcoxon', 'kruskal', 'anova' ,'ttest'
+# correction could be one of 'none', 'fdr', 'bonferroni' ,'BH'
 MBR_stat(data = count_table, group_col = 'Group', meta_data = meta, 
        test_type = 'wilcoxon', out_path = './', 
        correction = 'none', cutoff = 0.008)
