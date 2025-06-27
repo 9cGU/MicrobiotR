@@ -25,6 +25,22 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 
 ## Installation
 
+You can firstly install these dependencies prior to installing `MicroBiotR`
+
+```markdown
+# install.packages("devtools")
+devtools::install_github("Hy4m/linkET", force = TRUE)
+packageVersion("linkET")
+
+install.packages("viridis")
+
+devtools::install_github("Bioconductor/Biobase", force = TRUE)
+install.packages("BiocManager", repos = "https://cran.R-project.org")
+BiocManager::install("flowCore")
+
+```
+
+
 You can install the released version of `MicroBiotR` from [GitHub](https://github.com/9cGU/MicroBiotR) with the following R commands:
 
 ```markdown
