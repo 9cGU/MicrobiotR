@@ -97,6 +97,8 @@ MBR_mantel(
 
 ![MBR Circle Plot](image/circle.png)
 ![MBR Violin Plot](image/violin.png)
+![MBR PCOA Plot](image/pcoa.png)
+![MBR Heatmap Plot](image/heatmap.png)
 
 ## Machine learning
 ```markdown
