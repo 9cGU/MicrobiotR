@@ -95,7 +95,8 @@ MBR_mantel(
 
 ```
 
-![MBR Circle Plot](images/circle.png)
+![MBR Circle Plot](image/circle.png)
+![MBR Violin Plot](image/violin.png)
 
 ## Machine learning
 ```markdown
