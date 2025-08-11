@@ -24,6 +24,8 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 * **MBR_plot**: visualize dot plot of selected features.
 * **MBR_save**: save new fcs files with user-customized clusters.
 
+'Type the function name to see its documentation (eg. ?MBR_stat)'
+
 ## Installation
 
 You can firstly install these dependencies prior to installing `MicroBiotR`
@@ -64,7 +66,7 @@ library(flowCore)
 
 # load matadata
 meta<-read.delim('meta.txt',header = T, row.names = 1)
-# som analysis
+# SOM analysis
 MBR_som(fl_data_ig)
 ```
 
@@ -79,14 +81,18 @@ MBR_stat(data = count_table, group_col = 'Group', meta_data = meta,
 
 ## Analysis
 ```markdown
-MBR_circle(data = significant_data, group_col = 'Group', meta_data = meta, width = 8, 
-         height = 8, out_path = './')
+# Circular plot
+MBR_circle(data = significant_data, group_col = 'Group', meta_data = meta, width = 16, 
+         height = 16, out_path = './')
 
-MBR_violin(data = significant_data, meta_data = meta, pvalue_data = pvalue_data, 
-         cluster = 709, group_col = 'Group', colors = c('#FF7F00', '#4DAF4A'), out_path = './')
+# Violin plot
+MBR_violin(data = significant_data, meta_data = meta, group_col = "Group",
+           pvalue_data = pvalue_data, p = "p.adj",colors = c('#FFADAD', '#DEDAF4'), cluster = 1948, out_path = './')
 
-MBR_beta(significant_data, out_path = './', test = 't.test', 
-       meta_data = meta, group_name = 'Group')
+# PCOA
+# test should be one of 'wilcox', 'ttest', 'kruskal', or 'anova'
+MBR_beta(significant_data, out_path = './', test = 'wilcox', 
+       meta_data = meta, group_name = 'Group', colors = c('#FFADAD', '#DEDAF4'))
 ```
 
 ![MBR Circle Plot](image/circle.png)
@@ -95,17 +101,20 @@ MBR_beta(significant_data, out_path = './', test = 't.test',
 
 ## Feature selection
 ```markdown
+# Feature selection
 MBR_fs(significant_data, out_path = './', 
      nfolds_cv = 5, rfe_size=199, top_n_features =10,group_name = 'Group', 
      meta_data = meta,ref_group = 'CD', colors = c('#FFADAD', '#DEDAF4'))
 
-MBR_heatmap(data = MBR_selected_features[,1:6], 
+# Heatmap
+MBR_heatmap(data = MBR_selected_features[,1:184], 
           cohonen_information = cohonen_information, 
           out_path = './', scale = 'row', cluster_cols = F, 
           cluster_rows = T, display_numbers = F)
 
+# Correlation
 MBR_mantel(
-  data = MBR_selected_features,
+  data = MBR_selected_features[,1:10],
   meta_data = meta,
   clinical_cols = c("Clinical1", "Clinical2"),
   demographic_cols = c("Demographic1", "Demographic2"),
@@ -128,11 +137,11 @@ MBR_ml(
   meta_data = meta,          # metadata dataframe (samples in same order as `data`)
   group_name = 'Group',             # column name in metadata containing group labels
   out_path = './',          # directory to save output PDF and group file
-  reference_level = 'IBD',            # reference group (e.g., "A" or "Control")
+  reference_level = 'CD',            # reference group (e.g., "A" or "Control")
   width = 6,                        # width of the output plot PDF
   height = 6,                       # height of the output plot PDF
   method = 'repeatedcv',           # resampling method (e.g., repeated cross-validation)
-  number = 2,                       # number of folds
+  number = 5,                       # number of folds
   repeats = 2                       # number of repeats
 )
 
@@ -140,7 +149,7 @@ MBR_conf(
   data = MBR_selected_features,
   meta_data = meta,
   group_name = 'Group',
-  reference_level = 'IBD',
+  reference_level = 'CD',
   out_path = './'
 )
 ```
