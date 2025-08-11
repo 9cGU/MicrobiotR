@@ -24,7 +24,7 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 * **MBR_plot**: visualize dot plot of selected features.
 * **MBR_save**: save new fcs files with user-customized clusters.
 
-'Type the function name to see its documentation (eg. ?MBR_stat)'
+Type the function name to see its documentation (eg. ?MBR_stat)
 
 ## Installation
 
