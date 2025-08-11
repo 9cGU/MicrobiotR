@@ -85,7 +85,6 @@ MBR_stat(data = count_table, group_col = 'Group', meta_data = meta,
 MBR_circle(data = significant_data, group_col = 'Group', meta_data = meta, width = 16, 
          height = 16, out_path = './')
 
-# Violin plot
 MBR_violin(data = significant_data, meta_data = meta, group_col = "Group",
            pvalue_data = pvalue_data, p = "p.adj",colors = c('#FFADAD', '#DEDAF4'), cluster = 1948, out_path = './')
 
