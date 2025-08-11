@@ -115,7 +115,11 @@ MBR_mantel(
   height = 6
 )
 ```
-
+![MBR FS Plot1](image/fs1.png)
+![MBR FS Plot2](image/fs2.png)
+![MBR FS Plot3](image/fs3.png)
+![MBR Heatmap Plot](image/heatmap.png)
+![MBR Correlation Plot](image/cor.png)
 
 ## Machine learning
 ```markdown
@@ -140,6 +144,8 @@ MBR_conf(
   out_path = './'
 )
 ```
+![MBR ROC Plot](image/roc.png)
+![MBR Confusion_Matrix Plot](image/conf.png)
 
 ## Reclustering
 ```markdown
@@ -205,6 +211,8 @@ plots <- MBR_plot(
 
 print(plots)
 ```
+
+![MBR dot Plot](image/dot.png)
 
 ## Saving user-customized fcs file
 ```markdown
