@@ -22,6 +22,7 @@ MicrobiotR provide an All-in-One framework that supports a wide array of microbi
 * **MBR_process**: prepare data for downstream analytical steps.
 * **MBR_prepare**: prepare data for downstream analytical steps.
 * **MBR_plot**: visualize dot plot of selected features.
+* **MBR_save**: save new fcs files with user-customized clusters.
 
 ## Installation
 
@@ -97,8 +98,6 @@ MBR_mantel(
 
 ![MBR Circle Plot](image/circle.png)
 ![MBR Violin Plot](image/violin.png)
-![MBR PCOA Plot](image/pcoa.png)
-![MBR Heatmap Plot](image/heatmap.png)
 
 ## Machine learning
 ```markdown
@@ -189,5 +188,15 @@ plots <- MBR_plot(
 print(plots)
 ```
 
+## saving user-customized fcs file
+```markdown
+MBR_save(
+  fcs_files = fcs_files,
+  dat = dat, 
+  selected_rows = c("V9", "V10"),
+  file_index = 1,
+  rawdata_path = rawdata_path
+)
+```
 
 
