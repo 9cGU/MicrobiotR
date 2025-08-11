@@ -33,6 +33,10 @@ You can firstly install these dependencies prior to installing `MicroBiotR`
 devtools::install_github("Hy4m/linkET", force = TRUE)
 packageVersion("linkET")
 
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("Biobase")
+
 install.packages("viridis")
 
 devtools::install_github("Bioconductor/Biobase", force = TRUE)
@@ -75,8 +79,19 @@ MBR_circle(data = significant_data, group_col = 'Group', meta_data = meta, width
 MBR_violin(data = significant_data, meta_data = meta, pvalue_data = pvalue_data, 
          cluster = 709, group_col = 'Group', colors = c('#FF7F00', '#4DAF4A'), out_path = './')
 
-MBR_beta(original, out_path = './', test = 't.test', 
+MBR_beta(significant_data, out_path = './', test = 't.test', 
        meta_data = meta, group_name = 'Group')
+
+```
+
+![MBR Circle Plot](image/circle.png)
+![MBR Violin Plot](image/violin.png)
+
+## Feature selection
+```markdown
+MBR_fs(significant_data, out_path = './', 
+     nfolds_cv = 5, rfe_size=199, top_n_features =10,group_name = 'Group', 
+     meta_data = meta,ref_group = 'CD', colors = c('#FFADAD', '#DEDAF4'))
 
 MBR_heatmap(data = MBR_selected_features[,1:6], 
           cohonen_information = cohonen_information, 
@@ -96,8 +111,6 @@ MBR_mantel(
 
 ```
 
-![MBR Circle Plot](image/circle.png)
-![MBR Violin Plot](image/violin.png)
 
 ## Machine learning
 ```markdown
@@ -128,7 +141,7 @@ MBR_conf(
 MBR_reclustering(data = cohonen_information, num_clusters = 1000)
 ```
 
-## flowcytometry dotplot
+## Flowcytometry dotplot
 ```markdown
 rawdata_path <- "/MappedFCS"
 
@@ -188,7 +201,7 @@ plots <- MBR_plot(
 print(plots)
 ```
 
-## saving user-customized fcs file
+## Saving user-customized fcs file
 ```markdown
 MBR_save(
   fcs_files = fcs_files,
