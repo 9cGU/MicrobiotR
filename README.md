@@ -73,8 +73,8 @@ MBR_som(fl_data_ig)
 # test type should be one of 'wilcoxon', 'kruskal', 'anova' ,'ttest'
 # correction could be one of 'none', 'fdr', 'bonferroni' ,'BH'
 MBR_stat(data = count_table, group_col = 'Group', meta_data = meta, 
-       test_type = 'wilcoxon', out_path = './', 
-       correction = 'none', cutoff = 0.008)
+       test_type = 'wilcox', out_path = './', 
+       correction = 'fdr', cutoff = 0.001)
 ```
 
 ## Analysis
@@ -91,6 +91,7 @@ MBR_beta(significant_data, out_path = './', test = 't.test',
 
 ![MBR Circle Plot](image/circle.png)
 ![MBR Violin Plot](image/violin.png)
+![MBR PCOA Plot](image/pcoa.png)
 
 ## Feature selection
 ```markdown
