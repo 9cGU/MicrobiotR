@@ -56,6 +56,12 @@ packageVersion("MicroBiotR")
 
 ## SOM analysis
 ```markdown
+# load libraries
+library(MicroBiotR)
+library(linkET)
+library(Biobase)
+library(flowCore)
+
 # load matadata
 meta<-read.delim('meta.txt',header = T, row.names = 1)
 # som analysis
@@ -81,7 +87,6 @@ MBR_violin(data = significant_data, meta_data = meta, pvalue_data = pvalue_data,
 
 MBR_beta(significant_data, out_path = './', test = 't.test', 
        meta_data = meta, group_name = 'Group')
-
 ```
 
 ![MBR Circle Plot](image/circle.png)
@@ -108,7 +113,6 @@ MBR_mantel(
   width = 6,
   height = 6
 )
-
 ```
 
 
